@@ -1,7 +1,6 @@
 # Command-Line Calculator
 
-This project contains a command-line calculator.  The calculator has one register and five memory cells.  It support about eighty different operators, including add, subtract, multiply
-and divide.  Each operation is printed to the screen.  Enter the numbers directly into the Number fields. You can use Copy and Paste (Ctrl-C and Shift-Insert) in Number fields.  You can use memory cells (M1 - M5) in Number fields.
+This project contains a command-line calculator.  The calculator has one register and five memory cells.  It supports about eighty different operators, including add, subtract, multiply and divide.  Each operation is printed to the screen.  Enter the numbers directly into the Number fields. Use Copy and Paste (Ctrl-C and Shift-Insert) to insert numbers into the Number fields.  Use memory cells (M1 - M5) in the Number fields.
 
 ## Install and Build
 
@@ -25,73 +24,73 @@ The is a C# Console-Mode Project. Use Visual Studio 2022 and above to compile.
 
   Enter an empty line in the operator field.
 
+
 ## Operators
 
-```
-+ add
-- subtract
-* multiply
-/ divide
-% modulus
-! factorial
-= show register
-
-A absolute value
-ACOS anti-cosine
-ASIN anti-sine
-ATAN anti-tangent
-B Binary
-BIT Show Bits
-C clear
-CB cube, a ^ 3
-CL Ceiling
-COS Cosine in radians
-CDF Cumulative Density Function, z-score
-CM Commas
-CR cube root, EXP(a, 1 / 3)
-DEG radians to degrees
-E exponent, power, a ^b
-EN Euler's Number 2.71
-F fraction
-FL Floor
-G General, No exponent
-GAU Gaussian, z - score
-GCF Greatest Common Factor
-H Hex
-I Integer
-LCM - Least Common Multiple
-LG Base 10 Logarithm, 10 ^ a
-LN Natural Logarithm, E ^ a
-M1 get from memory
-MC Memory Clear
-MEM Show Memory Cells
-N Number
-ND Normal Distribution, x, mean, std
-P2 power of two, 2 ^ a
-PD Prime Divisor
-PI half rotation in radians 3.14
-PM Prime?
-R reciprocal, 1 / x
-RAD degrees to radians
-RAN Random Integer
-RC Range Clear, Set Range to 0 to 100
-RD Round
-RH Random High
-RL Random Low
-RN Random Number Between High and Low
-RND Random Double Between One and Zero
-RT Nth Root, EXP(a, 1 / b)
-S Change Sign
-SIN sine in radians
-SM1 save to memory cell one
-SN Simple Normal Distribution, mean = 0, std = 1
-SR square root, SQRT(a)
-STU Student's T-Distribution, t-score and degrees of freedom
-TAN tangent in radians
-TAU full rotation in radians 6.28
-X2 square, a * a
-X3 cube, a ^ 3
-```
+| Operator | Description |
+| --- | --- |
+| + | add|
+| - | subtract |
+| * | multiply |
+| / | divide |
+| % | modulus |
+| ! | factorial |
+| = | show register |
+| A |  absolute value |
+| ACOS | anti-cosine |
+| ASIN | anti-sine |
+| ATAN | anti-tangent |
+| B | Binary |
+| BIT | Show Bits |
+| C | clear |
+| CB | cube, a ^ 3 |
+| CL | Ceiling |
+| COS | Cosine in radians |
+| CDF | Cumulative Density Function, z-score |
+| CM | Commas |
+| CR | cube root, EXP(a, 1 / 3) |
+| DEG | radians to degrees |
+| E | exponent, power, a ^ b |
+| EN | Euler's Number 2.71 |
+| F | fraction |
+| FL | Floor |
+| G | General, No exponent |
+| GAU | Gaussian, z - score |
+| GCF | Greatest Common Factor |
+| H | Hex |
+| I | Integer |
+| LCM | Least Common Multiple |
+| LG | Base 10 Logarithm, 10 ^ a |
+| LN | Natural Logarithm, e ^ a |
+| M1 | get from memory cell one |
+| MC | Memory Clear |
+| MEM | Show Memory Cells |
+| N | Number |
+| ND | Normal Distribution, x, mean, std |
+| P2 | power of two, 2 ^ a |
+| PD | Prime Divisor |
+| PI | half rotation in radians 3.14 |
+| PM | Prime? |
+| R | reciprocal, 1 / x |
+| RAD | degrees to radians "
+| RAN | Random Integer |
+| RC | Range Clear, Set Range to 0 to 100 |
+| RD | Round |
+| RH | Random High |
+| RL | Random Low |
+| RN | Random Number Between High and Low |
+| RND | Random Double Between One and Zero |
+| RT | Nth Root, EXP(a, 1 / b) |
+| S | Change Sign |
+| SIN | sine in radians |
+| SM1 | save to memory cell one |
+| SN | Simple Normal Distribution, mean = 0, std = 1 |
+| SR | square root, SQRT(a) |
+| STU | Student's T-Distribution, t-score and degrees of freedom|
+| TAN | tangent in radians |
+| TAU | full rotation in radians 6.28 |
+| X2 | square, a * a |
+| X3 | cube, a ^ 3 |
 
 ## Fields
 
