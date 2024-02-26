@@ -48,7 +48,8 @@ The is a C# Console-Mode Project. Use Visual Studio 2022 and above to compile.
 | COS | Cosine in radians |
 | CDF | Cumulative Density Function, z-score |
 | CM | Commas |
-| CR | cube root, EXP(a, 1 / 3) |
+| CR | Cube root, EXP(a, 1 / 3) |
+| CSR | Cosine Rule |
 | DEG | radians to degrees |
 | E | exponent, power, a ^ b |
 | EN | Euler's Number 2.71 |
@@ -58,6 +59,8 @@ The is a C# Console-Mode Project. Use Visual Studio 2022 and above to compile.
 | GAU | Gaussian, z - score |
 | GCF | Greatest Common Factor |
 | H | Hex |
+| HT | Height of Triangle |
+| HYP | Hypotenuse |
 | I | Integer |
 | LCM | Least Common Multiple |
 | LG | Base 10 Logarithm, 10 ^ a |
@@ -71,8 +74,9 @@ The is a C# Console-Mode Project. Use Visual Studio 2022 and above to compile.
 | PD | Prime Divisor |
 | PI | half rotation in radians 3.14 |
 | PM | Prime? |
+| QF | Quadratic Formula |
 | R | reciprocal, 1 / x |
-| RAD | degrees to radians "
+| RAD | degrees to radians |
 | RAN | Random Integer |
 | RC | Range Clear, Set Range to 0 to 100 |
 | RD | Round |
