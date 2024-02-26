@@ -113,7 +113,8 @@ namespace CalcOne
             Console.WriteLine("COS Cosine in radians");
             Console.WriteLine("CDF Cumulative Density Function, z-score");
             Console.WriteLine("CM Commas");
-            Console.WriteLine("CR cube root, EXP(a, 1 / 3)");
+            Console.WriteLine("CR Cube root, EXP(a, 1 / 3)");
+            Console.WriteLine("CSR Cosine rule");
             Console.WriteLine("DEG radians to degrees");
             Console.WriteLine("E exponent, power, a ^b");
             Console.WriteLine("EN Euler's Number 2.71");
@@ -123,6 +124,8 @@ namespace CalcOne
             Console.WriteLine("GAU Gaussian, z - score");
             Console.WriteLine("GCF Greatest Common Factor");
             Console.WriteLine("H Hex");
+            Console.WriteLine("HT Height of Triangle");
+            Console.WriteLine("HYP Hypotenuse");
             Console.WriteLine("I Integer");
             Console.WriteLine("LCM - Least Common Multiple");
             Console.WriteLine("LG Base 10 Logarithm, 10 ^ a");
@@ -135,6 +138,7 @@ namespace CalcOne
             Console.WriteLine("PD Prime Divisor");
             Console.WriteLine("PI half rotation in radians 3.14");
             Console.WriteLine("PM Prime?");
+            Console.WriteLine("QF Quadratic Formula");
             Console.WriteLine("R reciprocal, 1 / x");
             Console.WriteLine("RAD degrees to radians");
             Console.WriteLine("RAN Random Integer");
@@ -329,7 +333,10 @@ namespace CalcOne
                     Console.WriteLine("CM Commas");
                     break;
                 case "CR":
-                    Console.WriteLine("CR cube root, EXP(a, 1 / 3)");
+                    Console.WriteLine("CR Cube root, EXP(a, 1 / 3)");
+                    break;
+                case "CSR":
+                    Console.WriteLine("CSR Cosine rule");
                     break;
                 case "DEG":
                     Console.WriteLine("DEG radians to degrees");
@@ -357,6 +364,12 @@ namespace CalcOne
                     break;
                 case "H":
                     Console.WriteLine("H Hex");
+                    break;
+                case "HT":
+                    Console.WriteLine("HT Height of Triangle");
+                    break;
+                case "HYP":
+                    Console.WriteLine("HYP Hypotenuse");
                     break;
                 case "I":
                     Console.WriteLine("I Integer");
@@ -393,6 +406,9 @@ namespace CalcOne
                     break;
                 case "PM":
                     Console.WriteLine("PM Prime?");
+                    break;
+                case "QF":
+                    Console.WriteLine("QF Quadratic Formula");
                     break;
                 case "R":
                     Console.WriteLine("R reciprocal, 1 / x");
@@ -460,8 +476,8 @@ namespace CalcOne
         private void ShortOperatorList()
         {
             Console.WriteLine("Operators:");
-            Console.WriteLine("+ * / % ! = A ACOS ASIN ATAN B BIT C CB CDF CL CM COS CR DEG E EN F FL G GAU");
-            Console.WriteLine("GCF H I LCM LN LG M1 MC N ND P2 PD PI PM R RAD RAN RC RD RH RL RN RND RT S");
+            Console.WriteLine("+ * / % ! = A ACOS ASIN ATAN B BIT C CB CDF CL CM COS CR CSR DEG E EN F FL G GAU");
+            Console.WriteLine("GCF H HT HYP I LCM LN LG M1 MC N ND P2 PD PI PM QF R RAD RAN RC RD RH RL RN RND RT S");
             Console.WriteLine("SIN SM1 SN SR STU TAN TAU X2 X3\n");
         }
     }

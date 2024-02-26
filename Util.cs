@@ -1,7 +1,4 @@
-﻿
-
-using System;
-using System.Text;
+﻿using System.Text;
 
 namespace CalcOne
 {
@@ -9,8 +6,7 @@ namespace CalcOne
     {
         public double First;
         public double Second;
-        public double Third;
-        double M1, M2, M3, M4, M5;
+        public double M1, M2, M3, M4, M5;
         public int RandLow = 0;
         public int RandHigh = 100;
 
@@ -136,7 +132,6 @@ namespace CalcOne
                 case "C":
                     First = 0.0;
                     Second = 0.0;
-                    Third = 0.0;
                     Console.Clear();
                     return;
                 case "CB":
@@ -145,12 +140,7 @@ namespace CalcOne
                     First = result;
                     break;
                 case "CDF":
-                    Console.Write("Z? ");
-                    input = Console.ReadLine();
-                    Double.TryParse(input, out First);
-                    result = CumDensity(First);
-                    Console.WriteLine("CDF({0}) = {1}", First, result);
-                    First = result;
+                    First = GetCDF();
                     break;
                 case "CL":
                     result = Math.Ceiling(First);
@@ -169,6 +159,9 @@ namespace CalcOne
                     result = Math.Cbrt(First);
                     Console.WriteLine("CBRT({0}) = {1}", First, result);
                     First = result;
+                    break;
+                case "CSR":
+                    First = GetCosineRule();
                     break;
                 case "DEG":
                     result = Degrees(First);
@@ -235,6 +228,12 @@ namespace CalcOne
                     {
                         Console.WriteLine("Too Big");
                     }
+                    break;
+                case "HT":
+                    GetHeightOfTriangle();
+                    break;
+                case "HYP":
+                    First = GetHypotenuse();
                     break;
                 case "I":
                     result = Math.Floor(First);
@@ -316,21 +315,9 @@ namespace CalcOne
                     Double.TryParse(input, out First);
                     Console.WriteLine(First);
                     Second = 0.0;
-                    Third = 0.0;
                     break;
                 case "ND":
-                    Console.Write("X? ");
-                    input = Console.ReadLine();
-                    Double.TryParse(input, out First);
-                    Console.Write("MEAN? ");
-                    input = Console.ReadLine();
-                    Double.TryParse(input, out Second);
-                    Console.Write("STD? ");
-                    input = Console.ReadLine();
-                    Double.TryParse(input, out Third);
-                    result = Normal(First, Second, Third);
-                    Console.WriteLine("ND({0}, {1}, {2}) = {3}", First, Second, Third, result);
-                    First = result;
+                    First = NormDist();
                     break;
                 case "P2":
                     result = Math.Pow(2, First);
@@ -363,6 +350,9 @@ namespace CalcOne
                     {
                         Console.WriteLine("Too Big");
                     }
+                    break;
+                case "QF":
+                    Quadratic();
                     break;
                 case "R":
                     result = 1.0 / First;
@@ -471,16 +461,11 @@ namespace CalcOne
                     Console.WriteLine("M5 = {0}", M5);
                     break;
                 case "SN":
-                    Console.Write("X? ");
-                    input = Console.ReadLine();
-                    Double.TryParse(input, out First);
-                    result = SimpleNormal(First);
-                    Console.WriteLine("SN({0}) = {1}", First, result);
-                    First = result;
+                    First = GetSimpleNormal();
                     break;
                 case "SQ":
                     result = First * First;
-                    Console.WriteLine("{0} ^ 2 = {1}", First, result);
+                    Console.WriteLine("SQ({0}) = {1}", First, result);
                     First = result;
                     break;
                 case "SR":
@@ -489,15 +474,7 @@ namespace CalcOne
                     First = result;
                     break;
                 case "STU":
-                    Console.Write("T? ");
-                    input = Console.ReadLine();
-                    Double.TryParse(input, out First);
-                    Console.Write("DF? ");
-                    input = Console.ReadLine();
-                    Double.TryParse(input, out Second);
-                    result = Student(First, Second);
-                    Console.WriteLine("STU({0}, {1}) = {2}", First, Second, result);
-                    First = result;
+                    First = GetStudent();
                     break;
                 case "TAN":
                     result = Math.Tan(First);
@@ -614,12 +591,12 @@ namespace CalcOne
             return result;
         }
 
-        double Radians(double degrees)
+        private static double Radians(double degrees)
         {
             return Math.PI * degrees / 180.0;
         }
 
-        double Degrees(double radians)
+        private static double Degrees(double radians)
         {
             return 180.0 * radians / Math.PI;
         }
@@ -710,6 +687,138 @@ namespace CalcOne
             return (a / GCF(a, b)) * b;
         }
 
+        private void Quadratic()
+        {
+            double a, b, c;
+
+            // Quadratic Formula:  AX2 + BX + C = 0
+            Console.Write("A? ");
+            string input = Console.ReadLine();
+            Double.TryParse(input, out a);
+            Console.Write("B? ");
+            input = Console.ReadLine();
+            Double.TryParse(input, out b);
+            Console.Write("C? ");
+            input = Console.ReadLine();
+            Double.TryParse(input, out c);
+            double result = QuadraticOne(a, b, c);
+            Console.WriteLine("X1 = {0}", result);
+            result = QuadraticTwo(a, b, c);
+            Console.WriteLine("X2 = {0}", result);
+        }
+
+        // Quadratic Formula. First Root.
+        private static double QuadraticOne(double a, double b, double c)
+        {
+            double d = Math.Sqrt(b * b - 4 * a * c);
+            return (d - b) / (a + a);
+        }
+
+        // Quadratic Formula. Second Root.
+        private static double QuadraticTwo(double a, double b, double c)
+        {
+            double d = Math.Sqrt(b * b - 4 * a * c);
+            return (-b - d) / (a + a);
+        }
+
+        private void GetHeightOfTriangle()
+        {
+            double a, b, c;
+
+            Console.Write("A? ");
+            string input = Console.ReadLine();
+            Double.TryParse(input, out a);
+            Console.Write("B? ");
+            input = Console.ReadLine();
+            Double.TryParse(input, out b);
+            Console.Write("C? ");
+            input = Console.ReadLine();
+            Double.TryParse(input, out c);
+            HeightOfTriangle(a, b, c);
+        }
+
+        private void HeightOfTriangle(double a, double b, double c) 
+        {
+            double p, d, ha, hb, hc;
+
+            p = (a + b + c) / 2;
+            d = 2.0 * Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            ha = d / a;
+            hb = d / b;
+            hc = d / c;
+            Console.WriteLine("ha = {0}", ha);
+            Console.WriteLine("hb = {0}", hb);
+            Console.WriteLine("hc = {0}", hc);
+        }
+
+        private double GetHypotenuse()
+        {
+            double a, b;
+
+            // C = SQRT(A2 + B2)
+            Console.Write("A? ");
+            string input = Console.ReadLine();
+            Double.TryParse(input, out a);
+            Console.Write("B? ");
+            input = Console.ReadLine();
+            Double.TryParse(input, out b);
+            double result = Hypotenuse(a, b);
+            Console.WriteLine("C = {0}", result);
+            return result;
+        }
+
+        private double Hypotenuse(double a, double b) 
+        {
+           return Math.Sqrt(a * a + b * b);
+        }
+
+
+        private double GetCosineRule()
+        {
+            double a, b, gamma;
+
+            Console.Write("A? ");
+            string input = Console.ReadLine();
+            Double.TryParse(input, out a);
+            Console.Write("B? ");
+            input = Console.ReadLine();
+            Double.TryParse(input, out b);
+            Console.Write("Gamma? ");
+            input = Console.ReadLine();
+            Double.TryParse(input, out gamma);
+            double result = CosineRule(a, b, gamma);
+            Console.WriteLine("C = {0}", result);
+            return result;
+        }
+
+
+        /// <summary>
+        /// Cosine Rule.  Get Length of third side of a triangle.
+        /// </summary>
+        /// <param name="a">double</param>
+        /// <param name="b">double</param>
+        /// <param name="gamma">degrees</param>
+        /// <returns></returns>
+        private static double CosineRule(double a, double b, double gamma) 
+        {
+            // C = SQR(A2 + B2 - 2AB * COS(gamma))
+            // Gamma is angle of side C.
+            return Math.Sqrt((a * a) + (b * b) - 2 * a * b * Math.Cos(Radians(gamma)));
+        }
+
+        private double GetCDF()
+        {
+            double z;
+
+            Console.Write("Z? ");
+            string input = Console.ReadLine();
+            Double.TryParse(input, out z);
+            double result = CumDensity(z);
+            Console.WriteLine("CDF({0}) = {1}", z, result);
+            return result;
+        }
+
+
         /// <summary>
         /// CDF - Cumulative Density Function for the Standard Normal Distribution.
         /// </summary>
@@ -738,6 +847,22 @@ namespace CalcOne
               * t + a2) * t + a1) * t * Math.Exp(-x * x);
             return 0.5 * (1.0 + sign * erf);
         } // CumDensity()
+
+        // Get Student T-Distribution
+        private double GetStudent()
+        {
+            double t, df;
+
+            Console.Write("T? ");
+            string input = Console.ReadLine();
+            Double.TryParse(input, out t);
+            Console.Write("DF? ");
+            input = Console.ReadLine();
+            Double.TryParse(input, out df);
+            double result = Student(t, df);
+            Console.WriteLine("STU({0}, {1}) = {2}", t, df, result);
+            return result;
+        }
 
         /// <summary>
         /// Student's T-Distribution
@@ -834,6 +959,25 @@ namespace CalcOne
             }
         } // Gauss()
 
+        // Normal Distribution
+        private double NormDist()
+        {
+            double x, mean, std;
+
+            Console.Write("X? ");
+            string input = Console.ReadLine();
+            Double.TryParse(input, out x);
+            Console.Write("MEAN? ");
+            input = Console.ReadLine();
+            Double.TryParse(input, out mean);
+            Console.Write("STD? ");
+            input = Console.ReadLine();
+            Double.TryParse(input, out std);
+            double result = Normal(x, mean, std);
+            Console.WriteLine("ND({0}, {1}, {2}) = {3}", x, mean, std, result);
+            return result;
+        }
+
 
         /// <summary>
         /// Normal Distribution (pdf)
@@ -846,6 +990,18 @@ namespace CalcOne
         {
             double tmp = 1 / ((Math.Sqrt(2 * Math.PI) * std));
             return tmp * Math.Exp(-0.5 * Math.Pow((x - mean) / std, 2));
+        }
+
+        private double GetSimpleNormal()
+        {
+            double x;
+
+            Console.Write("X? ");
+            string input = Console.ReadLine();
+            Double.TryParse(input, out x);
+            double result = SimpleNormal(x);
+            Console.WriteLine("SN({0}) = {1}", x, result);
+            return result;
         }
 
         /// <summary>
