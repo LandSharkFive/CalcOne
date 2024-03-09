@@ -1,10 +1,10 @@
 # Command-Line Calculator
 
-This project contains a command-line calculator.  The calculator has one register and five memory cells.  It supports about eighty different operators, including add, subtract, multiply and divide.  Each operation is printed to the screen.  Enter the numbers directly into the Number fields. Use Copy and Paste (Ctrl-C and Shift-Insert) to insert numbers into the Number fields.  Use memory cells (M1 - M5) in the Number fields.
+This project contains a command-line calculator.  The calculator has one register and five memory cells.  It supports about eighty different operators, including add, subtract, multiply and divide.  Each operation is printed to the screen.  Enter the numbers directly into the Number fields. Use Copy and Paste (Ctrl-C and Shift-Insert) to insert numbers into the Number fields as needed.  Use memory cells (M1 - M5) in the Number fields as needed.
 
 ## Install and Build
 
-The is a C# Console-Mode Project. Use Visual Studio 2022 and above to compile. 
+The is a C# Console-Mode Project.  Open with Visual Studio 2022 and above to compile. 
 
 ## Description:
 
@@ -123,7 +123,7 @@ Operator? S
 -(12.62) = -12.62
 ```
 
-### Get 123 Squared
+### 123 Squared
 
 ```
 Operator? n
@@ -133,7 +133,7 @@ Operator? x2
 123 ^ 2 = 15129
 ```
 
-Add Three Numbers: 121, 336 and 712
+### Add Three Numbers: 121, 336 and 712
 
 ```
 Operator? n
@@ -147,7 +147,7 @@ Number ? 712
 457 + 712 = 1169
 ```
 
-### Get Square Root of 658
+### Square Root of 658
 
 ```
 Operator? n
@@ -178,7 +178,7 @@ Operator? rad
 RAD(33) = 0.5759586531581288
 ```
 
-### Get the Cosine of 42 degrees
+### Cosine of 42 degrees
 
 ```
 Operator? n
@@ -190,7 +190,7 @@ Operator? cos
 COS(0.7330382858376184) = 0.7431448254773942
 ```
 
-### Get the Factorial of 9
+### Factorial of 9
 
 ```
 Operator? n
@@ -200,7 +200,7 @@ Operator ? !
 9! = 362880
 ```
 
-### Get the Greatest Common Factor of 121 and 335
+### Greatest Common Factor of 121 and 335
 
 ```
 Operator? n
@@ -211,7 +211,7 @@ Number ? 335
 GCF(121, 335) = 1
 ```
 
-### Get Log Base 10 of 55
+### Log Base 10 of 55
 
 ```
 Operator? n
@@ -221,7 +221,7 @@ Operator? lg
 LG(55) = 1.7403626894942439
 ```
 
-### Get the 5th Root of 321
+### 5th Root of 321
 
 ```
 Operator? n
@@ -232,7 +232,7 @@ Number ? 5
 RT(321, 5) = 3.1717650296502993
 ```
 
-### Get the Length of the Hypotenuse of a Right Triangle with Sides 7.2 and 11.5
+### Hypotenuse of a Right Triangle with Sides 7.2 and 11.5
 
 ```
 Operator? n
@@ -271,3 +271,9 @@ M4 = 0
 M5 = 0
 ```
 
+## Credits
+
+```
+1. James McCaffrey, "The Normal Cumulative Density Function in C#", http://jamesmccaffrey.wordpress.com, 2014.
+```
+   
